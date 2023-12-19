@@ -9,7 +9,7 @@ jobs:
   build:
     name: Build
     runs-on: self-hosted
-    permissions: read-all
+    permissions: write-all
 
     steps:
       - name: Checkout Repository
