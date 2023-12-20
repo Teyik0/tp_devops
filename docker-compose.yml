@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - sonarqube
+
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    networks:
+      - sonarqube
+
+  sonar_scan:
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      - SONAR_TOKEN==sqp_53f78980020e00cf07a1db89d4565ec0463709f7
+      - SONAR_SCANNER_OPTS=-Dsonar.projectKey=tp_devops
+      - SONAR_HOST_URL=http://project:9000
+    networks:
+      - sonarqube
+    depends_on:
+      - sonarqube
+
+networks:
+  sonarqube:
