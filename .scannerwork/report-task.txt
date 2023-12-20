@@ -1,0 +1,6 @@
+projectKey=test
+serverUrl=http://172.17.0.3:9000
+serverVersion=10.3.0.82913
+dashboardUrl=http://172.17.0.3:9000/dashboard?id=test
+ceTaskId=AYyHSdyt25IKYG85Gaof
+ceTaskUrl=http://172.17.0.3:9000/api/ce/task?id=AYyHSdyt25IKYG85Gaof
