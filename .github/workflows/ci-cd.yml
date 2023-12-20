@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
 
       - name: sonar-scan
-        run: sonar-scanner -Dsonar.projectKey=tsets -Dsonar.sources=. -Dsonar.host.url=172.17.0.3 -Dsonar.token=sqp_63310624310ff9abaec7dcc4bbd068cd9142c766
+        run: sonar-scanner -Dsonar.projectKey=tsets -Dsonar.sources=. -Dsonar.host.url=172.17.0.3:9000 -Dsonar.token=sqp_63310624310ff9abaec7dcc4bbd068cd9142c766
 
       # - uses: sonarsource/sonarqube-scan-action@master
       #   env:
